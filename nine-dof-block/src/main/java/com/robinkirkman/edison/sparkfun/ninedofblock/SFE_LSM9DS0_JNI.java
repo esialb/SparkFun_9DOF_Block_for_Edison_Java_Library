@@ -133,7 +133,11 @@ public final class SFE_LSM9DS0_JNI {
 	private long ptr;
 	
 	public SFE_LSM9DS0_JNI() {
-		ptr = ctor0();
+		this(0x6B, 0x1D);
+	}
+	
+	public SFE_LSM9DS0_JNI(int gAddr, int xmAddr) {
+		ptr = ctor0(gAddr, xmAddr);
 	}
 	
 	public float gx, gy, gz;
@@ -141,7 +145,7 @@ public final class SFE_LSM9DS0_JNI {
 	public float mx, my, mz;
 	public short temperature;
 	
-	private static native long ctor0();
+	private static native long ctor0(int gAddr, int xmAddr);
 	private static native short gx0(long ptr);
 	private static native short gy0(long ptr);
 	private static native short gz0(long ptr);

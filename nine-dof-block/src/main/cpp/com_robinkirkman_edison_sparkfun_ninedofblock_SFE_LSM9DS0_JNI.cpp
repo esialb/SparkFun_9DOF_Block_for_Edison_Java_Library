@@ -8,11 +8,11 @@ extern "C" {
 /*
  * Class:     com_robinkirkman_edison_sparkfun_ninedofblock_SFE_LSM9DS0_JNI
  * Method:    ctor0
- * Signature: ()J
+ * Signature: (II)J
  */
 JNIEXPORT jlong JNICALL Java_com_robinkirkman_edison_sparkfun_ninedofblock_SFE_1LSM9DS0_1JNI_ctor0
-  (JNIEnv *, jclass) {
-	return (jlong) new LSM9DS0(0x6B, 0x1D);
+  (JNIEnv *, jclass, jint gAddr, jint xmAddr) {
+	return (jlong) new SFE_LSM9DS0(gAddr, xmAddr);
 }
 
 /*
