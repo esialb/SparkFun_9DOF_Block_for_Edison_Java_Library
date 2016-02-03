@@ -12,7 +12,7 @@ extern "C" {
  */
 JNIEXPORT jlong JNICALL Java_com_robinkirkman_edison_sparkfun_ninedofblock_SFE_1LSM9DS0_1JNI_ctor0
   (JNIEnv *, jclass, jint gAddr, jint xmAddr) {
-	return (jlong) new SFE_LSM9DS0(gAddr, xmAddr);
+	return (jlong) new LSM9DS0(gAddr, xmAddr);
 }
 
 /*
