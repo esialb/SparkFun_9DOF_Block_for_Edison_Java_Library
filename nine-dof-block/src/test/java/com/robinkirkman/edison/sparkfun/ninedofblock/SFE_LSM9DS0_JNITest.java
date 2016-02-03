@@ -13,21 +13,21 @@ public class SFE_LSM9DS0_JNITest {
 		while(System.currentTimeMillis() < stop) {
 			if(dof.newXData()) {
 				dof.readAccel();
-				System.out.println(String.format("%f %f %f", dof.ax, dof.ay, dof.az));
+				System.out.println(String.format("accel: %f %f %f", dof.ax, dof.ay, dof.az));
 			} else
 				Thread.sleep(50);
 		}
 	}
 
 	@Test
-	public void testGyrp() throws Exception {
+	public void testGyro() throws Exception {
 		SFE_LSM9DS0_JNI dof = new SFE_LSM9DS0_JNI();
 		dof.begin();
 		long stop = System.currentTimeMillis() + TimeUnit.MILLISECONDS.convert(10, TimeUnit.SECONDS);
 		while(System.currentTimeMillis() < stop) {
 			if(dof.newGData()) {
 				dof.readGyro();
-				System.out.println(String.format("%f %f %f", dof.gx, dof.gy, dof.gz));
+				System.out.println(String.format("gyro: %f %f %f", dof.gx, dof.gy, dof.gz));
 			} else
 				Thread.sleep(50);
 		}
@@ -41,7 +41,7 @@ public class SFE_LSM9DS0_JNITest {
 		while(System.currentTimeMillis() < stop) {
 			if(dof.newMData()) {
 				dof.readMag();
-				System.out.println(String.format("%f %f %f", dof.mx, dof.my, dof.mz));
+				System.out.println(String.format("mag: %f %f %f", dof.mx, dof.my, dof.mz));
 			} else
 				Thread.sleep(50);
 		}
