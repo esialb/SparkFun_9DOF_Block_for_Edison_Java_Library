@@ -126,6 +126,7 @@ public final class SFE_LSM9DS0_JNI {
 	};
 	
 	static {
+		System.loadLibrary("mraa");
 		NarSystem.loadLibrary();
 	}
 	
