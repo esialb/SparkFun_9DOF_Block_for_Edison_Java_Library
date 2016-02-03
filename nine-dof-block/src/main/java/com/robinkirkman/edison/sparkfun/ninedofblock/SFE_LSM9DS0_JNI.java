@@ -140,9 +140,9 @@ public final class SFE_LSM9DS0_JNI {
 		ptr = ctor0(gAddr, xmAddr);
 	}
 	
-	public double gx, gy, gz;
-	public double ax, ay, az;
-	public double mx, my, mz;
+	public float gx, gy, gz;
+	public float ax, ay, az;
+	public float mx, my, mz;
 	public short temperature;
 	
 	private static native long ctor0(int gAddr, int xmAddr);
