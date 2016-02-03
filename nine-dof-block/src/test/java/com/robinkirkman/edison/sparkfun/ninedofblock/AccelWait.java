@@ -12,6 +12,7 @@ public class AccelWait {
 		while(true) {
 			while(!jni.newXData())
 				Thread.sleep(5);
+			jni.readAccel();
 			double[] now = new double[] { jni.ax, jni.ay, jni.az };
 			double dist = Math.sqrt(Math.pow(origin[0] - now[0], 2) + Math.pow(origin[1] - now[1], 2) + Math.pow(origin[2] - now[2], 2));
 			if(dist > 0.25)
