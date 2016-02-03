@@ -24,7 +24,7 @@ Distributed as-is; no warranty is given.
 ******************************************************************************/
 
 #include "SFE_LSM9DS0.h"
-#include <mraa.h>
+#include "mraa.h"
 #include <stdint.h>
 #include <unistd.h>
 
