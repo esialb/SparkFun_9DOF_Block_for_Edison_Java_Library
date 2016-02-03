@@ -52,4 +52,31 @@
 		</plugins>
 	</build>
 
+
+	<profiles>
+		<profile>
+			<id>edison</id>
+			<build>
+				<plugins>
+			<plugin>
+				<groupId>com.github.maven-nar</groupId>
+				<artifactId>nar-maven-plugin</artifactId>
+				<version>3.2.3</version>
+				<extensions>true</extensions>
+				<configuration>
+					<libraries>
+						<library>
+							<type>shared</type>
+							<narSystemPackage>com.robinkirkman.edison.sparkfun.ninedofblock</narSystemPackage>
+						</library>
+					</libraries>
+					<linker>
+						<sysLibSet>mraa</sysLibSet>
+					</linker>
+				</configuration>
+			</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
