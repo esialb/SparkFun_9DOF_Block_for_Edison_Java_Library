@@ -49,7 +49,7 @@
 				<configuration>
 					<libraries>
 						<library>
-							<type>shared</type>
+							<type>jni</type>
 							<narSystemPackage>com.robinkirkman.edison.sparkfun.ninedofblock</narSystemPackage>
 						</library>
 					</libraries>
@@ -72,7 +72,7 @@
 				<configuration>
 					<libraries>
 						<library>
-							<type>shared</type>
+							<type>jni</type>
 							<narSystemPackage>com.robinkirkman.edison.sparkfun.ninedofblock</narSystemPackage>
 						</library>
 					</libraries>
