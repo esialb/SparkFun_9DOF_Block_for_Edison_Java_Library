@@ -175,6 +175,16 @@ public final class SFE_LSM9DS0_JNI {
 	private static native boolean gDataOverflow0(long ptr);
 	private static native boolean mDataOverflow0(long ptr);
 	
+	public short begin() {
+		return begin(
+				GyroScale.G_SCALE_245DPS,
+				AccelScale.A_SCALE_2G,
+				MagScale.M_SCALE_2GS,
+				GyroODR.G_ODR_95_BW_125,
+				AccelODR.A_ODR_50,
+				MagODR.M_ODR_50);
+	}
+	
 	public short begin(GyroScale gScl, AccelScale aScl, MagScale mScl, GyroODR gRate, AccelODR aRate, MagODR mRate) {
 		return begin0(
 				ptr,
