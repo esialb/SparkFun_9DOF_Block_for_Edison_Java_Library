@@ -11,8 +11,8 @@ public class SFE_LSM9DS0_JNITest {
 		dof.begin();
 		long stop = System.currentTimeMillis() + TimeUnit.MILLISECONDS.convert(10, TimeUnit.SECONDS);
 		while(System.currentTimeMillis() < stop) {
-			dof.readAccel();
 			if(dof.newXData()) {
+				dof.readAccel();
 				System.out.println(String.format("%f %f %f", dof.ax, dof.ay, dof.az));
 			} else
 				Thread.sleep(50);
