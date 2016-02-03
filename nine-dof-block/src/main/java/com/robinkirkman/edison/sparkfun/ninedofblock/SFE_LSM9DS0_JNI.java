@@ -125,7 +125,9 @@ public final class SFE_LSM9DS0_JNI {
 		}
 	};
 	
-	private static native long ctor0();
+	static {
+		NarSystem.loadLibrary();
+	}
 	
 	private long ptr;
 	
@@ -138,6 +140,7 @@ public final class SFE_LSM9DS0_JNI {
 	public float mx, my, mz;
 	public short temperature;
 	
+	private static native long ctor0();
 	private static native short gx0(long ptr);
 	private static native short gy0(long ptr);
 	private static native short gz0(long ptr);
