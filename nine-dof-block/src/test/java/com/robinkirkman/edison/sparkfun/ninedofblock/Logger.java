@@ -7,26 +7,24 @@ public class Logger {
 		jni.begin();
 		
 		for(;;) {
-			boolean read = false;
-			if(jni.newGData()) {
-				read = true;
-				long now = System.nanoTime();
+			boolean gnew = jni.newGData();
+			boolean xnew = jni.newXData();
+			boolean mnew = jni.newMData();
+			long now = System.nanoTime();
+
+			if(gnew) {
 				jni.readGyro();
 				System.out.println(String.format("%s,%d,%f,%f,%f", "G", now, jni.gx, jni.gy, jni.gz));
 			}
-			if(jni.newXData()) {
-				read = true;
-				long now = System.nanoTime();
+			if(xnew) {
 				jni.readAccel();
 				System.out.println(String.format("%s,%d,%f,%f,%f", "X", now, jni.ax, jni.ay, jni.az));
 			}
-			if(jni.newMData()) {
-				read = true;
-				long now = System.nanoTime();
+			if(mnew) {
 				jni.readMag();
 				System.out.println(String.format("%s,%d,%f,%f,%f", "M", now, jni.mx, jni.my, jni.mz));
 			}
-			if(!read)
+			if(!(gnew || xnew || mnew))
 				Thread.sleep(1);
 		}
 	}
