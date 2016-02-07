@@ -18,13 +18,13 @@ public class Logger {
 				read = true;
 				long now = System.nanoTime();
 				jni.readAccel();
-				System.out.println(String.format("%s,%d,%f,%f,%f", "G", now, jni.ax, jni.ay, jni.az));
+				System.out.println(String.format("%s,%d,%f,%f,%f", "X", now, jni.ax, jni.ay, jni.az));
 			}
 			if(jni.newMData()) {
 				read = true;
 				long now = System.nanoTime();
 				jni.readMag();
-				System.out.println(String.format("%s,%d,%f,%f,%f", "G", now, jni.mx, jni.my, jni.mz));
+				System.out.println(String.format("%s,%d,%f,%f,%f", "M", now, jni.mx, jni.my, jni.mz));
 			}
 			if(!read)
 				Thread.sleep(1);
